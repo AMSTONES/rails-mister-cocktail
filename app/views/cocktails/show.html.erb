@@ -1,3 +1,8 @@
-SHOW COCKTAIL
-<%= @cocktail.name %>
-<%= render 'doses/index' %>
+
+<div class='container d-flex flex-column align-items-center'>
+  <h1><%= @cocktail.name %></h1>
+  <%= render 'doses/index' %>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 600, crop: :fill %>
+  <%= link_to 'Add an ingredient!', new_cocktail_dose_path(@cocktail), class: 'btn-primary p-3 m-3' %>
+  <%= link_to 'Return to all cocktails', cocktails_path, class: 'btn-primary p-3 m-3' %>
+</div>

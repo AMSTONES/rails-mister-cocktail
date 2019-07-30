@@ -1,17 +1,20 @@
-<div class='banner d-flex justify-content-center'>
+
+  <div class='banner d-flex justify-content-center'>
   <h1>GOD I NEED A DRINK</h1>
 </div>
-<%= cl_image_tag("san_francisco.jpg",
-      width: 400, height: 300, crop: :fill) %>
-<div class='container d-flex justify-content-around'>
-<% @cocktails.each do |tail| %>
-<div class='card p-3 m-3'>
-  <div class='card-body'>
-    <h3 class='card-title'><%= link_to tail.name, cocktail_path(tail) %></h3>
-    <img class='card-img' src="#" alt="" width="250px">
+<div class='container d-flex justify-content-around flex-wrap'>
+  <% @cocktails.each do |tail| %>
+  <div class='card p-3 m-3'>
+    <div class='card-body'>
+      <h3 class='card-title'><%= link_to tail.name, cocktail_path(tail) %></h3>
+      <%= cl_image_tag tail.photo, height: 150, width: 250, crop: :fill %>
+    </div>
   </div>
+  <% end %>
 
 </div>
 
-<% end %>
+
+<div class="container d-flex justify-content-center">
+  <%= link_to 'Create your own cocktail!', new_cocktail_path, class: 'btn-primary to-form p-3 my-3' %>
 </div>

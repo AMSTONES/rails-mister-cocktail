@@ -1,7 +1,10 @@
-<% @doses.each do |dose| %>
-<p><%= dose.description %>: Dsc</p>
-<p><%= dose.id %>: ID</p>
-<p><%= dose.cocktail_id %>: booze id</p>
+
+
+  <% @doses.each do |dose| %>
+  <div class='dose-ingredient container d-flex justify-content-center'>
+    <p><%= dose.description %> <%= dose.ingredient.name %></p>
+  </div>
+
 <br>
 <% end %>
 
