@@ -1,6 +1,8 @@
 <div class='banner d-flex justify-content-center'>
   <h1>GOD I NEED A DRINK</h1>
 </div>
+<%= cl_image_tag("san_francisco.jpg",
+      width: 400, height: 300, crop: :fill) %>
 <div class='container d-flex justify-content-around'>
 <% @cocktails.each do |tail| %>
 <div class='card p-3 m-3'>
